@@ -53,6 +53,7 @@ const RightButton = styled(LeftButton) `
   color: black; 
 `
 const DownArrow = styled.img `
+  cursor: pointer;
   overflow-x: hidden;
   height: 35px;
   animation: arrowDown infinite 1.5s;
