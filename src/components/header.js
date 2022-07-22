@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from "styled-components";
-import {items} from '../data';
+import {items, cars} from '../data';
 import CloseIcon from '@mui/icons-material/Close';
 
 const Container = styled.div `
@@ -36,7 +36,7 @@ const Menu = styled.div `
     background-color: rgba(17, 25, 40, 0.05);
     border-radius: 15px;
   }
-  @media (max-width: 800px){
+  @media screen and (max-width: 1100px){
     display: none;
   }
 `
@@ -110,12 +110,11 @@ function Header() {
     <Container>
       <a><img src="/images/logo.svg" alt = "Logo"></img></a>
       <Menu>
-        <a href={"#Model S"}>Model S</a>
-        <a href={'#Model 3'}>Model 3</a>
-        <a href={'#Model X'}>Model X</a>
-        <a href={'#Model Y'}>Model Y</a>
-        <a href={'#Solar Panels'}>Solar Panels</a>
-        <a href={'#Solar Roof'}>Solar Roof</a>
+        {
+          cars.map((car, id) => {
+            return <a key={id} href = {"#"+car}>{car}</a>
+          })
+        }
       </Menu>
       <RightMenu>
         <a href='#'>Shop</a>
